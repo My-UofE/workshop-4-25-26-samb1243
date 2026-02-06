@@ -45,5 +45,48 @@ public class Rectangle {
   public double getPerimeter() {
     return 2 * (width + height);
   }
+
+  // method: change scale of rectangle for each coord 
+  public void scale (double scaleX, double scaleY){
+    width *= scaleX;
+    height *= scaleY;
+  }
+
+  //method: change scale for both 
+  public void scale(double scale){
+    scale(scale, scale);
+  }
+
+  public boolean isOverlappedWith (Rectangle r){
+    double leftA = this.originX;
+    double rightA = this.originX + this.width;
+    double topA = this.originY;
+    double bottomA = this.originY + this.height;
+
+    double leftB = r.originX;
+    double rightB = r.originX + r.width;
+    double topB = r.originY;
+    double bottomB = r.originY + r.height;
+
+    if (rightA <= leftB || rightB <= leftA || bottomA <= topB || bottomB <= topA ){
+      return false;
+    }
+
+    return true;
+
+  }
+
+  public double calcRatio() {
+    return width/height;
+  }
+
+  public boolean isSquare(){
+    if (width == height){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
   
 }
