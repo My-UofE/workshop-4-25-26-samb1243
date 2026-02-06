@@ -2,10 +2,11 @@
 public class Rectangle {
   
   // 4 instance attributes
-  public double width;
-  public double height;
-  public double originX = 0.0;
-  public double originY = 0.0;
+  //changed to private width
+  private double width;
+  private double height;
+  private double originX = 0.0;
+  private double originY = 0.0;
 
   // 1 static attributes
   public static final int NUMBER_OF_SIDES = 4;
@@ -57,6 +58,9 @@ public class Rectangle {
     scale(scale, scale);
   }
 
+  //task 2
+  //check overlapping method
+
   public boolean isOverlappedWith (Rectangle r){
     double leftA = this.originX;
     double rightA = this.originX + this.width;
@@ -76,10 +80,12 @@ public class Rectangle {
 
   }
 
+  //check ratio method
   public double calcRatio() {
     return width/height;
   }
 
+  //check if the rect is a square
   public boolean isSquare(){
     if (width == height){
       return true;
@@ -88,5 +94,48 @@ public class Rectangle {
       return false;
     }
   }
-  
+
+
+  //task 3 
+
+  //getter and setter for width
+  // for each attribute provide getter method
+  public double getWidth(){ 
+    return width;
+  }
+
+  // for each attribute provide setter method
+  public void setWidth(double width){
+    this.width = width;
+  }
+
+  //for height 
+
+  public double getHeight(){
+    return height;
+  }
+
+  public void setHeight(double height){
+    this.height = height;
+  }
+
+  //for x and y
+
+  public double getoriginX(){
+    return originX;
+  }
+
+  public void setoriginX(){
+    this.originX = originX;
+  }
+
+  //for x and y
+
+  public double getoriginY(){
+    return originY;
+  }
+
+  public void setoriginY(){
+    this.originX = originY;
+  }
 }
